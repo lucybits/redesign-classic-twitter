@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Desktop (Redesign)</title>
+    <link rel="icon" href="./icons/twitter.ico" type="image/x-icon">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="home-screen.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <img class="logo" src="./icons/twitterlogo.png" alt="Logo de Twitter">
+
+    <!-- Interfaz principal -->
+    <p class="available">Only available on desktop PC</p>
+    <div id="main-interface" class="hidden">
+        <div class="header">
+            <img class="header-logo" src="./icons/twitterlogo.png" alt="Logo de Twitter">
+            <input type="text" class="search-input" placeholder="">
+            <span class="search-icon"><i class="fas fa-search white-icon"></i></span>
+        </div>
+
+        <div class="profilepage">
+            <div class="sidebar bg-dark">
+                <ul class="list-unstyled d-flex flex-column">
+                    <li style="margin-bottom: 25px;"><a href="#"><i class="fas fa-home fa-lg"
+                                style="margin-right: 10px;"></i><span>Inicio</span></a></li>
+                    <li style="margin-bottom: 25px;"><a href="#"><i class="fas fa-search fa-lg"
+                                style="margin-right: 10px;"></i><span>Explorar</span></a></li>
+                    <li style="margin-bottom: 25px;"><a href="#"><i class="fas fa-bell fa-lg"
+                                style="margin-right: 10px;"></i><span>Notificaciones</span></a></li>
+                    <li style="margin-bottom: 25px;"><a href="#"><i class="fas fa-envelope fa-lg"
+                                style="margin-right: 10px;"></i><span>Mensajes</span></a></li>
+                    <li style="margin-bottom: 25px;"><a href="#"><i class="fas fa-list fa-lg"
+                                style="margin-right: 10px;"></i><span>Listas</span></a></li>
+                    <li style="margin-bottom: 25px;"><a href="#"><i class="fas fa-bookmark fa-lg"
+                                style="margin-right: 10px;"></i><span>Guardados</span></a></li>
+                    <li style="margin-bottom: 25px;"><a href="#"><i class="fas fa-check-circle fa-lg"
+                                style="margin-right: 10px;"></i><span class="TB">Twitter Blue</span></a></li>
+                    <li style="margin-bottom: 25px;"><a href="#"><i class="fas fa-user fa-lg"
+                                style="margin-right: 10px;"></i><span>Perfil</span></a></li>
+                    <li style="margin-bottom: 25px;">
+                        <a href="#" onclick="toggleMenu(event)">
+                            <i class="fas fa-ellipsis-h fa-lg" style="margin-right: 10px;"></i>
+                            <span>Más opciones</span>
+                        </a>
+                        <ul id="menu" class="dropdown-menu">
+                            <!-- Contenido del menú desplegable -->
+                            <li><a href="#">Configuración y ajustes</a></li>
+                            <li><a href="#">Soporte</a></li>
+                            <li><a href="#">Términos y condiciones</a></li>
+                        </ul>
+                    </li>
+
+                    <script>
+                        function toggleMenu(event) {
+                            event.preventDefault();
+                            var menu = document.getElementById("menu");
+                            if (menu.style.display === "none" || menu.style.display === "") {
+                                menu.style.display = "block";
+                            } else {
+                                menu.style.display = "none";
+                            }
+                        }
+
+                        // Cerrar el menú desplegable al hacer clic fuera del menú
+                        window.addEventListener("click", function (event) {
+                            var menu = document.getElementById("menu");
+                            if (!event.target.closest("#menu") && !event.target.closest("a")) {
+                                menu.style.display = "none";
+                            }
+                        });
+                    </script>
+                    <!-- Agrega más elementos según tus necesidades -->
+
+                    <hr class="sidebar-line">
+
+                    <button class="tweet-button">Twittear</button>
+                </ul>
+            </div>
+        </div>
+        <div class="tweet-box">
+            <div class="user-icon">
+                <img src="./assets/iconprofiledefault.png" alt="Foto de perfil" class="user-icon-img" />
+            </div>
+            <textarea placeholder="¡¿Qué está pasando?!" rows="3"></textarea>
+            <div class="button-group">
+                <button><i class="fas fa-image icon-color-1"></i> Foto</button>
+                <button><i class="fas fa-comment icon-color-2"></i> Crear hilo</button>
+                <button><i class="fas fa-ellipsis-h"></i> Más</button>
+                <button> Twittear</button>
+            </div>
+        </div>
+
+        <!-- Sidebar de Tendencias -->
+        <div class="trending-sidebar">
+            <h2 class="trending-title">¿Qué está pasando?</h2>
+            <h3 class="trending-mexico">Tendencia en México</h3>
+            <ul class="trending-list">
+                <li>
+                    <a href="#">#TwitterLogo</a>
+                    <p class="hashtag-description">Tendencias sobre <span
+                            style="color: rgb(114, 210, 235);">#TwitterX</span></p>
+                </li>
+                <br>
+                <li><a href="#">Nicola</a></li>
+                <p class="hashtag-description-two">58,6 mil Tweets</p>
+                <br>
+                <li><a href="#">#HappyElMarianaDay</a></li>
+                <p class="hashtag-description-three">28,2 mil Tweets</p>
+                <br>
+                <!-- Agrega más hashtags populares para México -->
+            </ul>
+
+            <h3 class="global-trending">Tendencia global</h3>
+            <ul class="trending-list">
+                <li><a href="#">blackpink</a></li>
+                <p class="hashtag-description-four">108 mil Tweets</p>
+                <br>
+                <li><a href="#">#TwitterX</a></li>
+                <p class="hashtag-description-five">70,4 mil Tweets</p>
+                <br>
+                <li><a href="https://twitter.com/search?q=%23Barbie&src=typeahead_click&f=top">#Barbie</a></li>
+                <p class="hashtag-description-six">80,7 mil Tweets</p>
+                <!-- Agrega más hashtags populares a nivel global -->
+                <br>
+                <br>
+                <li><a href="https://twitter.com/explore/tabs/for-you" style="color: rgb(114, 210, 235);">Mostrar
+                        más</a></li>
+            </ul>
+            <!-- Agrega más categorías de tendencias con sus respectivos hashtags -->
+        </div>
+        <!-- Sidebar de A quién seguir -->
+        <div class="follow-sidebar" id="follow-sidebar">
+            <h2 class="follow-sidebar-title">A quién seguir</h2>
+            <!-- Perfil 1 -->
+            <div class="profile">
+                <img src="./assets/IY9Gx6Ok_400x400.jpg" alt="Perfil 1" width="40" height="40"
+                    style="border-radius: 40px;">
+                <p class="profile-name">Elon Musk</p>
+                <p class="username-profile">@elonmusk</p>
+                <span class="follow-badge-verified">
+                    <img src="./assets/Twitter_Verified_Badge.svg.png" alt="Verified Badge" width="20" height="20"
+                        class="badge-image">
+                </span>
+                <br>
+                <br>
+                <!-- Agrega más información o botones relacionados con el perfil si es necesario -->
+            </div>
+
+            <!-- Perfil 2 -->
+            <div class="profile">
+                <img src="./assets/-ohzCV7c_400x400.jpg" alt="Perfil 2" width="40" height="40"
+                    style="border-radius: 40px;">
+                <p class="profile-name">Taylor Swift</p>
+                <p class="username-profile">@taylorswift13</p>
+                <span class="follow-badge-verified-two">
+                    <img src="./assets/Twitter_Verified_Badge.svg.png" alt="Verified Badge" width="20" height="20"
+                        class="badge-image">
+                </span>
+                <br>
+                <br>
+                <!-- Agrega más información o botones relacionados con el perfil si es necesario -->
+            </div>
+
+            <!-- Perfil 3 -->
+            <div class="profile">
+                <img src="./assets/tUabU7TV_400x400.jpg" alt="Perfil 3" width="40" height="40"
+                    style="border-radius: 40px;">
+                <p class="profile-name">Nicki Minaj</p>
+                <p class="username-profile">@NICKIMINAJ</p>
+                <span class="follow-badge-verified-three">
+                    <img src="./assets/Twitter_Verified_Badge.svg.png" alt="Verified Badge" width="20" height="20"
+                        class="badge-image">
+                </span>
+                <br>
+                <br>
+                <!-- Agrega más información o botones relacionados con el perfil si es necesario -->
+            </div>
+            <li><a href="https://twitter.com/i/connect_people?user_id=35787166"
+                    style="color: rgb(114, 210, 235); text-decoration: none;">Mostrar más</a></li>
+        </div>
+        <div class="promotion-sidebar">
+            <h2 class="promotion-sidebar-title">¡Descubre Twitter Blue!</h2>
+            <p class="promotion-sidebar-description">Disfruta de beneficios exclusivos con Twitter Blue. Obtén acceso a
+                funciones avanzadas y más.</p>
+            <br>
+            <br>
+            <br>
+            <a href="https://twitter.com/i/twitter_blue_sign_up" class="promotion-button">Obtener Verificación</a>
+        </div>
+        <div class="rights-footer">
+            <span><a href="#">Condiciones de Servicio •</a></span>
+            <span><a href="#">Política de Privacidad •</a></span>
+            <span><a href="#">Política de cookies •</a></span>
+            <span><a href="#">Accesibilidad •</a></span>
+            <span><a href="#">Información de anuncios •</a></span>
+            <span><a href="#">Más opciones </a></span>
+            <p class="corp">© 2023 X Corp.</p>
+            <p class="corp"> Twitter Static Redesign by <span style="color:#9d87eb;">Lucía Casillas</span></p>
+            <br>
+          </div>
+
+
+        <div class="tweet-container">
+            <!-- TWEET DE ELON MUSK -->
+            <div class="tweet">
+                <div class="tweet-header">
+                    <div class="photo">
+                        <img src="./assets/IY9Gx6Ok_400x400.jpg" alt="Imagen de perfil" width="40" height="40">
+                    </div>
+                    <span class="profilename">Elon Musk</span>
+                    <span class="badge-verified">
+                        <img src="./assets/Twitter_Verified_Badge.svg.png" alt="Badge Verificado" width="20"
+                            height="20">
+                    </span>
+                    <span class="badge-twitter">
+                        <img src="./assets/u6qfBBkF_bigger.jpg" alt="Badge Verificado" width="20" height="20">
+                    </span>
+                    <a href="https://www.twitter.com/elonmusk" class="username" target="_blank">@elonmusk</a>
+                    <span class="date">· 30 jun.</span>
+                    <span class="ellipsis">...</span>
+                    <span class="comment-icon">
+                        <i class="fas fa-comment fa-lg white-icon"></i>
+                        <a href="#" class="comment-count">10,2k mil</a>
+                    </span>
+                    <span class="retweet-icon">
+                        <i class="fas fa-retweet fa-lg white-icon-a"></i>
+                        <a href="#" class="retweet-count">11,1k mil</a>
+                    </span>
+                    <span class="like-icon">
+                        <i class="fas fa-heart fa-lg white-icon-b"></i>
+                        <a href="#" class="like-count">108,7k mil</a>
+
+                    </span>
+                    <span class="stats-icon"> <!-- Cambia la clase a "stats-icon" -->
+                        <i class="fas fa-chart-line fa-lg white-icon-c"></i>
+                        <!-- Utiliza la clase "fas fa-chart-line" para el ícono de estadísticas -->
+                        <a href="#" class="stats-count">32 M</a>
+                        <!-- Cambia la clase a "stats-count" y agrega el contador de estadísticas -->
+                    </span>
+                    <span class="share-icon">
+                        <i class="fas fa-share-alt white-icon-d"></i>
+                    </span>
+
+                </div>
+                <div class="tweet-content">
+                    Astra inclinant, sed non obligant
+                </div>
+            </div>
+        </div>
+
+        <div class="tweet-container-two">
+            <!-- TWEET DE WARNER BROS PICTURES -->
+            <div class="tweet-two">
+                <div class="tweet-header-two">
+                    <div class="photo">
+                        <img src="./assets/358645729.jpg" alt="Imagen de perfil" width="40" height="40">
+                    </div>
+                    <a href="https://www.twitter.com/wbpictures" class="profilename">Warner Bros. Pictures</a>
+                    <span class="badge-verified-78231">
+                        <img src="./assets/Twitter_Verified_Badge_Gold.svg.png" alt="Badge Verificado" width="20"
+                            height="20">
+                    </span>
+                    <a href="https://www.twitter.com/wbpictures" class="username-78231" target="_blank">@wbpictures</a>
+                    <span class="date-78231">· 19 jul.</span>
+                    <span class="ellipsis">...</span>
+                    <span class="comment-icon">
+                        <i class="fas fa-comment fa-lg white-icon-e"></i>
+                        <a href="#" class="comment-count-two">25</a>
+                    </span>
+                    <span class="retweet-icon">
+                        <i class="fas fa-retweet fa-lg white-icon-f"></i>
+                        <a href="#" class="retweet-count-two">44</a> <!-- Cambia la clase a "retweet-count" -->
+                    </span>
+                    <span class="like-icon">
+                        <i class="fas fa-heart fa-lg white-icon-g"></i>
+                        <a href="#" class="like-count-two">355</a>
+                    </span>
+                    <span class="stats-icon"> <!-- Cambia la clase a "stats-icon" -->
+                        <i class="fas fa-chart-line fa-lg white-icon-h"></i>
+                        <!-- Utiliza la clase "fas fa-chart-line" para el ícono de estadísticas -->
+                        <a href="#" class="stats-count-two">31,8k</a>
+                        <!-- Cambia la clase a "stats-count" y agrega el contador de estadísticas -->
+                    </span>
+                    <span class="share-icon-two">
+                        <i class="fas fa-share-alt white-icon-i"></i>
+                    </span>
+                </div>
+                <div class="tweet-content-two">
+                    <a href="https://twitter.com/hashtag/BarbieTheMovie" class="hashtag-link"
+                        style="color: #f590ce;">#BarbieTheMovie</a> <img
+                        src="./assets/Warner_Bros_Barbie_2023_Update.png" alt="Icono Barbie" width="20" height="20"> is
+                    all the buzz! ✨ Don’t miss out on Barbie, and
+                    see it only in theaters THIS FRIDAY! Get tickets:
+                    <a href="http://barbie-themovie.com" style="color: #87CEEB">http://barbie-themovie.com</a>
+                    <br> <!-- Agrega un salto de línea para separar el texto de la imagen -->
+                    <img src="./assets/F1bFgjlaYAAlGE1.webp" alt="Imagen Promocional" class="promo-image">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="tweet-container-three">
+            <!-- TWEET DE WARNER BROS PICTURES -->
+            <div class="tweet-three">
+                <div class="tweet-header-three">
+                    <div class="photo">
+                        <img src="./assets/ECT7V3nN_400x400.jpg" alt="Imagen de perfil" width="40" height="40">
+                    </div>
+                    <a href="https://www.twitter.com/wbpictures" class="profilename">Sony</a>
+                    <span class="badge-verified-27632">
+                        <img src="./assets/Twitter_Verified_Badge_Gold.svg.png" alt="Badge Verificado" width="20"
+                            height="20">
+                    </span>
+                    <a href="https://www.twitter.com/wbpictures" class="username-27632" target="_blank">@Sony</a>
+                    <span class="date-27632">· 18 jul.</span>
+                    <span class="ellipsis">...</span>
+                    <span class="comment-icon">
+                        <i class="fas fa-comment fa-lg white-icon-j"></i>
+                        <a href="#" class="comment-count-three">900</a>
+                    </span>
+                    <span class="retweet-icon">
+                        <i class="fas fa-retweet fa-lg white-icon-k"></i>
+                        <a href="#" class="retweet-count-three">2.042</a> <!-- Cambia la clase a "retweet-count" -->
+                    </span>
+                    <span class="like-icon">
+                        <i class="fas fa-heart fa-lg white-icon-l"></i>
+                        <a href="#" class="like-count-three">57,7 mil</a>
+                    </span>
+                    <span class="stats-icon"> <!-- Cambia la clase a "stats-icon" -->
+                        <i class="fas fa-chart-line fa-lg white-icon-m"></i>
+                        <!-- Utiliza la clase "fas fa-chart-line" para el ícono de estadísticas -->
+                        <a href="#" class="stats-count-three">2 M</a>
+                        <!-- Cambia la clase a "stats-count" y agrega el contador de estadísticas -->
+                    </span>
+                    <span class="share-icon-three">
+                        <i class="fas fa-share-alt white-icon-n"></i>
+                    </span>
+                </div>
+                <div class="tweet-content-two">
+                    this is my first tweet as the sony intern
+                    <br>
+                    <br>
+                    pls don't let it flop so my boss lets me tweet again
+                    <br> <!-- Agrega un salto de línea para separar el texto de la imagen -->
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

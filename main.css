@@ -1,0 +1,1141 @@
+.logo {
+  max-width: 200px;
+  transition: opacity 0.1s ease;
+}
+.available{
+  text-align: center;
+  position: fixed;
+  color: rgba(255, 255, 255, 0.432);
+  font-family: 'Inter';
+  bottom: 0;
+  font-size:11px;
+  margin-left:10px; 
+}
+body.show-main .logo {
+  opacity: 0;
+  pointer-events: none;
+  font-family: 'Inter';
+  font-family: 'Chirp';
+}
+
+.hidden {
+  display: none;
+}
+
+/* Personalización del scrollbar */
+::-webkit-scrollbar {
+  width: 11px; /* Ajusta el ancho del scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #1b1b1b; /* Color de fondo del track del scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #009cb1; /* Color del thumb del scrollbar */
+  border-radius: 5px; /* Ajusta el radio de los bordes del thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #005F91; /* Color del thumb del scrollbar al pasar el cursor sobre él */
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter.ttf') format('truetype');
+  font-family: 'Chirp';
+  src: url('./fonts/chirp-medium-web.woff') format('woff');
+}
+
+#main-interface {
+  position: relative;
+  z-index: 1;
+  margin-top: 80px;
+  /* Ajusta este valor para dejar espacio para el encabezado */
+}
+
+.header {
+  position: fixed;
+  top: -15px;
+  left: 0;
+  width: 200vh;
+  background-color: none;
+  padding: 20px;
+  z-index: 2;
+}
+
+.header-logo {
+  height: 30px;
+  margin: 17px;
+  top: 0;
+}
+
+.search-input {
+  font-family: 'Inter', sans-serif;
+  background-color: #25323b;
+  color: rgba(255, 255, 255, 0.678);
+  border: none;
+  width: 170px;
+  padding: 12px;
+  margin-left: -1px;
+  position: fixed;
+  top: 17px;
+  border-radius: 13px;
+  padding-left: 50px;
+  /* Ajusta este valor para el espacio del icono */
+
+}
+
+.search-icon {
+  position: fixed;
+  left: 3%;
+  /* Ajusta este valor para la posición horizontal del icono */
+  top: 3.5%;
+  transform: translateY(-50%);
+  pointer-events: none;
+
+}
+
+.white-icon {
+  color: rgba(255, 255, 255, 0.507);
+}
+
+.search-container {
+  position: fixed;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.678);
+
+}
+
+.search-input:focus {
+  outline: none;
+  /* Eliminar el borde al hacer clic */
+  color: rgba(255, 255, 255, 0.678);
+}
+
+.sidebar {
+  font-family: 'Inter', sans-serif;
+  border-radius: 20px;
+  position: fixed;
+  top: 82px;
+  left: 30px;
+  width: 250px;
+  height: auto;
+  color: white;
+  background-color: #1f2930;
+  padding: 20px;
+  transition: width 0.3s ease;
+  z-index: 1;
+  box-shadow: 0 0 30px rgba(7, 6, 15, 0.384);
+  text-align: left;
+  /* Alineación del texto a la izquierda */
+
+  margin-bottom: 20px;
+  /* Margen inferior */
+}
+
+.sidebar ul li {
+  list-style: none;
+}
+
+.sidebar ul li a {
+  color: rgba(255, 255, 255, 0.808);
+  /* Cambia el color del texto a blanco */
+  text-decoration: none;
+  /* Elimina la línea debajo del texto */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar ul li a span {
+  transition: 0.3s ease;
+}
+
+.sidebar ul li a:hover span {
+  background-color: #394449dc;
+  padding: 12px;
+  border-radius: 19px;
+}
+
+.sidebar ul li a .TB {
+  transition: 0.3s ease;
+}
+
+.sidebar ul li a .TB:hover {
+  background-color: #185177dc;
+  padding: 12px;
+  border-radius: 19px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 55%;
+  right: 0;
+  background-color: #121b22;
+  border: 1px solid #394f64;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.dropdown-menu li {
+  margin-bottom: 10px;
+}
+
+.dropdown-menu a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px;
+  border-radius: 15px;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(43, 63, 78, 0.815)
+}
+
+
+.sidebar-line {
+  width: 85%;
+  border: none;
+  border-top: 1px solid rgba(85, 101, 119, 0.774);
+  margin-top: 20px;
+  margin-right: 50vh;
+  margin-bottom: 20px;
+}
+
+.tweet-button {
+  font-family: 'Inter', sans-serif;
+  display: block;
+  width: 70%;
+  margin-top: 10px;
+  margin-left: 13px;
+  padding: 10px;
+  background-color: #1279bddc;
+  color: rgb(224, 224, 224);
+  border: none;
+  border-radius: 40px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+}
+
+.tweet-button:hover {
+  background-color: #5793bbdc;
+}
+
+.tweet-box {
+  background-color: #21303a;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 51vh;
+  margin-right: 50vh;
+  width: 50%;
+  /* Ajusta el ancho según tus necesidades */
+  height: 200px;
+  /* Ajusta la altura según tus necesidades */
+}
+
+.user-icon-img {
+  width: 50px;
+  /* Ajusta el tamaño de la imagen según tus necesidades */
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 60px;
+}
+
+.tweet-box textarea {
+  color: #ffffff;
+  font-family: 'Chirp';
+  font-size: 20px;
+  font-weight: normal;
+  margin-top: -50px;
+  margin-left: 90px;
+  width: 520px;
+  height: 100px;
+  border: none;
+  resize: none;
+  border-radius: 15px;
+  background-color: #29404d;
+  text-align: left;
+  /* Añade esta línea */
+  padding-left: 10px;
+  padding-top: 10px;
+  /* Ajusta el espacio superior */
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.123);
+  /* Agrega sombra a los botones */
+}
+
+.tweet-box textarea:focus {
+  outline: #1f2930;
+}
+
+.tweet-box textarea::placeholder {
+  color: #b9b8b8;
+  font-family: 'Chirp';
+  font-size: 25px;
+  font-weight: normal;
+  text-align: left;
+  /* Añade esta línea */
+  padding-left: 10px;
+  padding-bottom: 10px;
+  /* Ajusta el espacio superior */
+}
+/* Personalización del scroll */
+textarea::-webkit-scrollbar {
+  width: 8px; /* Ajusta el ancho del scroll */
+}
+
+textarea::-webkit-scrollbar-track {
+  background: #1b1b1b; /* Color de fondo del track del scroll */
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: #009cb1; /* Color del scroll thumb */
+  border-radius: 5px; /* Ajusta el radio de los bordes del thumb */
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  background: #005F91; /* Color del scroll thumb al pasar el cursor sobre él */
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  /* Ajusta el valor según el espacio deseado entre los botones */
+  margin-top: 10px;
+  margin-left: 14%;
+
+}
+
+.button-group button {
+  padding: 12px 25px;
+  border: none;
+  background-color: #202e38;
+  border: 1px solid #4c9eca;
+  color: #dfdbdb;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.11);
+  font-family: 'Inter', sans-serif;
+  /* Agrega sombra a los botones */
+}
+
+.button-group button i {
+  margin-right: 5px;
+}
+
+.button-group button:hover {
+  background-color: #30485a;
+}
+
+.icon-color-1 {
+  color: #3db473;
+  /* Color personalizado para el primer icono */
+  font-size: 20px;
+}
+
+.icon-color-2 {
+  color: #7f9dff;
+  /* Color personalizado para el segundo icono */
+  font-size: 20px;
+}
+
+.icon-color-3 {
+  color: #dfbd4b;
+  /* Color personalizado para el tercer icono */
+  font-size: 20px;
+}
+.tweeting-button {
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.trending-sidebar {
+  border-radius: 20px;
+  position: absolute;
+  top: 10px;
+  right: -30px;
+  width: 270px; /* Ancho del sidebar */
+  height: 38%; /* Altura del sidebar */
+  background-color: #1f2930;
+  color: white;
+  padding: 20px;
+  z-index: 1;
+  box-shadow: 0 0 30px rgba(7, 6, 15, 0.384);
+  font-family: 'Inter', sans-serif;
+}
+.trending-title {
+  margin-top: 3px;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  color: #fff; /* Color del texto */
+  margin-bottom: 20px; /* Espaciado inferior para separar de las tendencias */
+}
+.trending-mexico{
+  color: rgb(138, 138, 138);
+  text-transform: uppercase;
+  font-size: 15px;
+}
+.global-trending{
+  color: rgb(138, 138, 138);
+  text-transform: uppercase;
+  font-size: 15px;
+}
+.trending-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.trending-list li {
+  margin-bottom: 10px;
+}
+
+.trending-list a {
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  text-decoration: none;
+}
+
+.trending-list a:hover {
+  text-decoration: none;
+}
+.hashtag-description{
+  font-family: 'Inter', sans-serif;
+  color: rgb(163, 163, 163);
+  font-size: 13px;
+ position: absolute;
+ margin-top: 1px;
+}
+.hashtag-description-two{
+  font-family: 'Inter', sans-serif;
+  color: rgb(163, 163, 163);
+  font-size: 13px;
+ position: absolute;
+ margin-top: -9px;
+}
+.hashtag-description-three{
+  font-family: 'Inter', sans-serif;
+  color: rgb(163, 163, 163);
+  font-size: 13px;
+ position: absolute;
+ margin-top: -9px;
+}
+.hashtag-description-four{
+  font-family: 'Inter', sans-serif;
+  color: rgb(163, 163, 163);
+  font-size: 13px;
+ position: absolute;
+ margin-top: -9px;
+}
+.hashtag-description-five{
+  font-family: 'Inter', sans-serif;
+  color: rgb(163, 163, 163);
+  font-size: 13px;
+ position: absolute;
+ margin-top: -9px;
+}
+.hashtag-description-six{
+  font-family: 'Inter', sans-serif;
+  color: rgb(163, 163, 163);
+  font-size: 13px;
+ position: absolute;
+ margin-top: -9px;
+}
+.follow-sidebar {
+  font-family: 'Inter', sans-serif;
+  border-radius: 20px;
+  position: absolute;
+  top: 84vh;
+  right: -30px;
+  width: 270px; /* Ancho del sidebar */
+  height: 21%;
+  background-color: #1f2930;
+  color: white;
+  padding: 20px;
+  z-index: 1;
+  box-shadow: 0 0 30px rgba(7, 6, 15, 0.384);
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+.follow-sidebar-title{
+    margin-top: 3px;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    color: #fff; /* Color del texto */
+    margin-bottom: 20px; /* Espaciado inferior para separar de las tendencias */
+}
+.profile-name{
+  position: absolute;
+  margin-left: 50px;
+  margin-top: -45px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+}
+.follow-badge-verified{
+  margin-left: 93px;
+  position: absolute;  
+}
+.follow-badge-verified-two{
+  margin-left: 106px;
+  position: absolute;  
+}
+.follow-badge-verified-three{
+  margin-left: 99px;
+  position: absolute;  
+}
+.username-profile{
+  font-family: 'Inter', sans-serif;
+  position: absolute;
+  margin-left: 50px;
+  margin-top: -23px;
+  font-size: 15px;
+  color: rgba(255, 250, 250, 0.473);
+}
+.promotion-sidebar {
+  border-radius: 20px;
+  position: absolute;
+  top: 134vh;
+  right: -30px;
+  width: 270px; /* Ancho del sidebar */
+  background-color: #1f2930;
+  color: white;
+  padding: 20px;
+  z-index: 1;
+  box-shadow: 0 0 30px rgba(7, 6, 15, 0.384);
+  font-family: 'Inter', sans-serif;
+}
+
+.promotion-sidebar-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 3px;
+}
+
+.promotion-sidebar-description {
+  color: rgba(255, 255, 255, 0.808);
+  font-family: 'Inter', sans-serif;
+  margin-top: -7px;
+  font-size: 14px;
+  position: absolute;
+}
+
+.promotion-button {
+  font-family: 'Inter', sans-serif;
+  display: block;
+  width: 70%;
+  padding: 10px 15px;
+  background-color: #1da1f2;
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.promotion-button:hover {
+  background-color: #07669c;
+}
+.rights-footer{
+  border-radius: 20px;
+  position: absolute;
+  top: 162vh;
+  right: 0;
+  width: 240px; /* Ancho del sidebar */
+  height: 7%; /* Altura del sidebar */
+  color: white;
+  padding: 20px;
+  z-index: 1;
+  font-family: 'Inter', sans-serif;
+  gap: 10px;
+}
+
+.rights-footer a {
+  text-decoration: none;
+  color: #ffffff6c; /* Color del texto */
+  font-size: 13px;
+  width: 520px;
+  height: 100px;
+}
+.rights-footer a:hover{
+  text-decoration: underline; 
+}
+.corp{
+  text-decoration: none; /* Quitar el subrayado */
+  color: #ffffff6c; /* Color del texto */
+  font-size: 13px;
+}
+.tweet-container {
+  background-color: #21303a;
+  border: none;
+  border-radius: 20px;
+  margin-top: 16px;
+  width: 101vh;
+  height: 18vh;
+  margin-left: 25.7%;
+}
+
+.tweet-container h2 {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.tweet-container p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.photo img {
+  border-radius: 50px;
+  margin-left: 15px;
+  margin-top: 18px;
+}
+
+.profilename {
+  position: absolute;
+  margin-left: 65px;
+  margin-top: -45px;
+  color: rgba(255, 250, 250, 0.856);
+  font-family: 'Chirp', sans-serif;
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.1s ease;
+}
+.profilename:hover{
+  cursor: pointer;
+  color: rgb(160, 171, 190);
+}
+
+.badge-verified {
+  position: absolute;
+  margin-left: 143px;
+  margin-top: -45.5px;
+  /* Agrega más estilos según tus necesidades */
+}
+
+.badge-twitter {
+  position: absolute;
+  margin-left: 167px;
+  margin-top: -45.5px;
+  border-radius: 50px;
+  /* Agrega más estilos según tus necesidades */
+}
+
+.username {
+  position: absolute;
+  margin-left: 195px;
+  margin-top: -46.5px;
+  color: rgba(255, 250, 250, 0.541);
+  font-family: 'Inter', sans-serif;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.username:hover{
+  cursor: pointer;
+  color: rgb(219, 218, 218);
+}
+
+.date {
+  position: absolute;
+  margin-left: 287px;
+  margin-top: -46.5px;
+  color: rgba(255, 250, 250, 0.541);
+  font-family: 'Inter', sans-serif;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.ellipsis {
+  position: absolute;
+  margin-left: 610px;
+  margin-top: -46.5px;
+  color: rgba(255, 250, 250, 0.527);
+  font-family: 'Inter', sans-serif;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.tweet-content {
+  white-space: nowrap;
+  overflow: hidden;
+  color: rgba(255, 250, 250, 0.911);
+  font-family: 'Inter', sans-serif;
+  display: inline-block;
+  position: absolute;
+  margin-left: 63px;
+  margin-top: -40px;
+}
+
+.white-icon {
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  position: relative;
+  top: 15px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 62px;
+}
+
+.comment-count {
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  top: 15px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 65px;
+  text-decoration: none; /* Para quitar el subrayado del enlace */
+  transition: color 0.3s ease; /* Efecto de transición de color al pasar el cursor */
+}
+
+.comment-count:hover {
+  color: #00BFFF;
+  cursor: pointer;
+}
+.white-icon-a {
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  position: relative;
+  top: 15px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 100px;
+}
+
+.retweet-count{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  top: 15px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 100px;
+  text-decoration: none; /* Para quitar el subrayado del enlace */
+  transition: color 0.3s ease; /* Efecto de transición de color al pasar el cursor */
+}
+.retweet-count:hover{
+  color: #00BFFF;
+  cursor: pointer;
+}
+.white-icon-b {
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  position: relative;
+  top: 15px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 135px;
+}
+
+.like-count{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  top: 15px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 135px;
+  text-decoration: none; /* Para quitar el subrayado del enlace */
+  transition: color 0.3s ease; /* Efecto de transición de color al pasar el cursor */
+}
+.like-count:hover{
+  color: #00BFFF;
+  cursor: pointer;
+}
+.white-icon-c {
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  position: relative;
+  top: 15px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 175px;
+}
+.stats-count{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  top: 15px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 175px;
+  text-decoration: none; /* Para quitar el subrayado del enlace */
+  transition: color 0.3s ease; /* Efecto de transición de color al pasar el cursor */
+}
+.stats-count:hover{
+  color: #00BFFF;
+  cursor: pointer;
+}
+.white-icon-d {
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  position: relative;
+  top: 15px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 205px;
+}
+
+.white-icon,
+.white-icon-a,
+.white-icon-b,
+.white-icon-c,
+.white-icon-d,
+.white-icon-e,
+.white-icon-f,
+.white-icon-g,
+.white-icon-h,
+.white-icon-i {
+  transition: color 0.2s ease; /* Añadimos la transición suave de 0.3 segundos al cambiar el color */
+}
+/* Aplicar el efecto hover para los iconos white-icon-a */
+.white-icon:hover {
+  color: #00BFFF;
+  /* Cambiar el color al pasar el cursor sobre el ícono */
+}
+
+/* Aplicar el efecto hover para los iconos white-icon-b */
+.white-icon-a:hover {
+  color: #00BFFF;
+  /* Cambiar el color al pasar el cursor sobre el ícono */
+}
+
+/* Aplicar el efecto hover para los iconos white-icon-c */
+.white-icon-b:hover {
+  color: #00BFFF;
+  /* Cambiar el color al pasar el cursor sobre el ícono */
+}
+
+/* Aplicar el efecto hover para los iconos white-icon-d */
+.white-icon-c:hover {
+  color: #00BFFF;
+  /* Cambiar el color al pasar el cursor sobre el ícono */
+}
+.white-icon-d:hover{
+  color: #00BFFF;
+}
+.white-icon-e:hover{
+  color: #00BFFF;
+}
+.white-icon-f:hover{
+  color: #00BFFF;
+}
+.white-icon-g:hover{
+  color: #00BFFF;
+}
+.white-icon-h:hover{
+  color: #00BFFF;
+}
+.white-icon-i:hover{
+  color: #00BFFF;
+}
+.tweet-container-two {
+  background-color: #21303a;
+  border: none;
+  border-radius: 20px;
+  margin-top: 16px;
+  width: 101vh;
+  height: 102vh;
+  margin-left: 25.7%;
+}
+
+.tweet-container-two h2 {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.tweet-container-two p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.tweet-content-two {
+  color: #FFFFFF; /* o 'white' */
+  font-family: 'Inter', sans-serif;
+  display: inline-block;
+  top: -42px;
+  margin-left: 63px;
+  position: relative;
+  max-width: 565px; /* Establece el ancho máximo que desees */
+  word-wrap: break-word; /* Permite que las palabras se dividan cuando alcancen el ancho máximo */
+}
+.hashtag-link {
+  text-decoration: none; /* Para quitar el subrayado del enlace */
+}
+.badge-verified-78231{
+  position: absolute;
+  margin-left: 229px;
+  margin-top: -45.5px;
+  /* Agrega más estilos según tus necesidades */
+}
+.username-78231{
+  position: absolute;
+  margin-left: 252px;
+  margin-top: -46.5px;
+  color: rgba(255, 250, 250, 0.541);
+  font-family: 'Inter', sans-serif;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.username-78231:hover{
+cursor: pointer;
+color: rgb(219, 218, 218);
+}
+.date-78231{
+  position: absolute;
+  margin-left: 355px;
+  margin-top: -46.5px;
+  color: rgba(255, 250, 250, 0.541);
+  font-family: 'Inter', sans-serif;
+  display: inline-block;
+  font-weight: bold;
+}
+.promo-image {
+  border-radius: 25px;
+  max-width: 100%;
+  width: 500px;
+  height: auto;
+  position: relative; /* Agrega position: absolute para posicionar la imagen con respecto al contenedor .tweet-content-two */
+ top: 18px; /* Ajusta este valor para controlar la distancia hacia abajo desde la parte inferior del contenedor */
+  left: 0; /* Ajusta este valor para controlar la distancia hacia la izquierda desde el borde izquierdo del contenedor */
+}
+.white-icon-e{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  position: relative;
+  top: 560px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 62px;
+}
+.comment-count-two{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  top: 560px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 65px;
+  text-decoration: none; /* Para quitar el subrayado del enlace */
+  transition: color 0.3s ease; /* Efecto de transición de color al pasar el cursor */
+}
+.comment-count-two:hover{
+  color: #00BFFF;
+  cursor: pointer;
+}
+
+.white-icon-f{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  position: relative;
+  top: 560px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 140px;
+}
+.retweet-count-two{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  top: 560px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 140px;
+  text-decoration: none; /* Para quitar el subrayado del enlace */
+  transition: color 0.3s ease; /* Efecto de transición de color al pasar el cursor */
+}
+.retweet-count-two:hover{
+  color: #00BFFF;
+  cursor: pointer;
+}
+.white-icon-g{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  position: relative;
+  top: 560px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 215px;
+}
+.like-count-two{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  top: 560px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 215px;
+  text-decoration: none; /* Para quitar el subrayado del enlace */
+  transition: color 0.3s ease; /* Efecto de transición de color al pasar el cursor */
+}
+.like-count-two:hover{
+  color: #00BFFF;
+  cursor: pointer;
+}
+.white-icon-h{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  position: relative;
+  top: 560px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 290px;
+}
+.stats-count-two{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  top: 560px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 290px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.stats-count-two:hover{
+  cursor: pointer;
+  color:#00BFFF;
+}
+.white-icon-i{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  position: relative;
+  top: 560px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 320px;
+}
+.tweet-container-three{
+  background-color: #21303a;
+  border: none;
+  border-radius: 20px;
+  margin-top: 16px;
+  width: 101vh;
+  height: 25vh;
+  margin-left: 25.7%;
+}
+.badge-verified-27632{
+  position: absolute;
+  margin-left: 105px;
+  margin-top: -45.5px;
+  /* Agrega más estilos según tus necesidades */
+}
+.username-27632{
+  position: absolute;
+  margin-left: 130px;
+  margin-top: -45px;
+  color: rgba(255, 250, 250, 0.541);
+  font-family: 'Inter', sans-serif;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.date-27632{
+  position: absolute;
+  margin-left: 186px;
+  margin-top: -45px;
+  color: rgba(255, 250, 250, 0.541);
+  font-family: 'Inter', sans-serif;
+  display: inline-block;
+  font-weight: bold;
+}
+.comment-count-three{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  top: 60px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 65px;
+  text-decoration: none; /* Para quitar el subrayado del enlace */
+}
+.white-icon-j{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  position: relative;
+  top: 60px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 62px;
+}
+.retweet-count-three{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  top: 60px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 135px;
+  text-decoration: none; /* Para quitar el subrayado del enlace */
+}
+.white-icon-k{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  position: relative;
+  top: 60px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 135px;
+}
+.like-count-three{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  top: 60px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 185px;
+  text-decoration: none; /* Para quitar el subrayado del enlace */
+}
+.white-icon-l{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  position: relative;
+  top: 60px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 185px;
+}
+.stats-count-three{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  top: 60px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 235px;
+  text-decoration: none; /* Para quitar el subrayado del enlace */
+}
+.white-icon-m{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  position: relative;
+  top: 60px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 235px;
+}
+.white-icon-n{
+  color: #a1a0a0;
+  /* o el valor de color blanco que desees utilizar */
+  position: relative;
+  top: 60px;
+  /* Ajustar el valor según tu necesidad para desplazar el elemento hacia abajo */
+  left: 275px;
+}

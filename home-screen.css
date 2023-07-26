@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+    display: flex;
+    justify-content: flex-start; /* Cambia el valor de center a flex-start */
+    align-items: flex-start; /* Cambia el valor de center a flex-start */
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .logo {
+    max-width: 70px;
+    margin: auto;
+    position: absolute;
+    top: 45vh;
+    left: 100vh; /* Ajusta esta propiedad según tus necesidades */
+  }
